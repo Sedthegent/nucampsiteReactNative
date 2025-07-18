@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { CAMPSITES } from "../shared/campsites";
+
 import DirectoryScreen from './DirectoryScreen';
 import { View, Platform, StyleSheet, Image, Text } from "react-native";
 import CampsiteInfoScreen from "./CampsiteInfoScreen";
@@ -18,6 +17,7 @@ import { fetchPartners } from "../features/partners/partnersSlice";
 import { fetchCampsites } from "../features/campsites/campsitesSlice";
 import { fetchPromotions } from "../features/promotions/promotionsSlice";
 import { fetchComments } from "../features/comments/commentsSlice";
+import ReservationScreen from "./ReservationScreen";
 
 
 
@@ -100,6 +100,30 @@ const ContactNavigator = () => {
     )
 }
 
+
+const ReservationNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator screenOptions={screenOptions}>
+             <Stack.Screen 
+                    name='Reservation'
+                    component={ReservationScreen}
+                    options= {({navigation}) => ({
+                
+                title:'Reservation Search',
+                headerLeft: () => (
+                    <Icon 
+                        name= 'tree'
+                        type = 'font-awesome'
+                        iconStyle={StyleSheet.stackIcon}
+                        onPress={() => navigation.toggleDrawer()}
+                    
+                    />
+                )
+            })}/>
+        </Stack.Navigator>
+    )
+}
 
 const DirectoryNavigator = () => {
    const Stack = createStackNavigator();
@@ -203,6 +227,24 @@ const Main = () =>
                             drawerIcon: ({color}) => (
                                 <Icon 
                                     name= 'list'
+                                    type = 'font-awesome'
+                                    size = {24}
+                                    iconStyle={{width: 24}}
+                                    color = {color}
+
+                                />
+                            ),
+                        }}
+                        />
+                        <Drawer.Screen
+                        name='ReserveCampsite'
+                        component={ReservationNavigator}
+                        options={{
+                            title: 'Reserve Campsite',
+                            headerShown: false,
+                            drawerIcon: ({color}) => (
+                                <Icon 
+                                    name= 'tree'
                                     type = 'font-awesome'
                                     size = {24}
                                     iconStyle={{width: 24}}
