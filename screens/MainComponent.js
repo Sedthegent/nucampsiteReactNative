@@ -45,7 +45,7 @@ const HomeNavigator = () => {
                     <Icon 
                         name= 'home'
                         type = 'font-awesome'
-                        iconStyle={StyleSheet.stackIcon}
+                        iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
                     
                     />
@@ -67,7 +67,7 @@ const AboutNavigator = () => {
                             <Icon 
                                 name= 'info-circle' 
                                 type = 'font-awesome'
-                                iconStyle={StyleSheet.stackIcon}
+                                iconStyle={styles.stackIcon}
                                 onPress={() => navigation.toggleDrawer()}
                             
                             />
@@ -91,7 +91,7 @@ const ContactNavigator = () => {
                     <Icon 
                         name= 'address-card'
                         type = 'font-awesome'
-                        iconStyle={StyleSheet.stackIcon}
+                        iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
                     
                     />
@@ -116,7 +116,7 @@ const ReservationNavigator = () => {
                     <Icon 
                         name= 'tree'
                         type = 'font-awesome'
-                        iconStyle={StyleSheet.stackIcon}
+                        iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
                     
                     />
@@ -140,7 +140,7 @@ const FavoritesNavigator = () => {
                     <Icon 
                         name= 'heart'
                         type = 'font-awesome'
-                        iconStyle={StyleSheet.stackIcon}
+                        iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
                     
                     />
@@ -168,7 +168,7 @@ const DirectoryNavigator = () => {
                     <Icon 
                         name= 'list'
                         type = 'font-awesome'
-                        iconStyle={StyleSheet.stackIcon}
+                        iconStyle={styles.stackIcon}
                         onPress={() => navigation.toggleDrawer()}
                     
                     />
@@ -199,7 +199,7 @@ const CustomDrawerContent = (props) => (
                 <Text style = {styles.drawerHeaderText}>NuCamp</Text>
             </View>
         </View>
-        <DrawerItemList {...props} lableStyle = {{fontWeight: 'bold'}} />
+        <DrawerItemList {...props} labelStyle = {{fontWeight: 'bold'}} />
     </DrawerContentScrollView>
 )
 
@@ -346,7 +346,7 @@ const Main = () =>
 
 const styles = StyleSheet.create ({
     drawerHeader: {
-        backgroundColor: ' #5637DD',
+        backgroundColor: '#5637DD',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
