@@ -3,6 +3,8 @@ import { Card, Icon } from 'react-native-elements';
 import { baseUrl } from '../../shared/baseUrl';
 import * as Animatable from 'react-native-animatable'
 import { useRef } from 'react';
+import { useState,dispatch } from "react";
+
 
 
 const RenderCampsite = (props) => {
@@ -11,6 +13,7 @@ const RenderCampsite = (props) => {
     const view = useRef();
 
     const isLeftSwipe = ({dx}) => dx< -200; //guesture to the left that is smaller than 200px
+    const isRightSwipe = ({dx}) => dx> 200;//guesture to the right that is smaller than 200px
 
     const panResponder = PanResponder.create({
         onStartShouldSetPanResponder: ()=> true,
@@ -33,7 +36,7 @@ const RenderCampsite = (props) => {
                             onPress: () => console.log('Cancel Pressed')
                         },
                         {
-                            test: 'OK',
+                            text: 'OK',
                             onPress: ()=> props.isFavorite
                             ? console.log ('Already set as a favorite')
                             : props.markFavorite()
@@ -42,7 +45,10 @@ const RenderCampsite = (props) => {
                     {cancelable:false}
                 );
             }
-        }
+            else if (isRightSwipe(gestureState)){props.onShowModal()}
+
+            }
+        
     });
 
     if (campsite) {
