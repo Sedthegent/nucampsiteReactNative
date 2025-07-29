@@ -267,7 +267,7 @@ const Main = () =>
                         />
                     <Drawer.Screen
                         name='HomeNav'
-                        component={HomeNavigator}
+                        component={HomeNavigator}å
                         options={{
                             title: 'Home',
                             headerShown: false,
