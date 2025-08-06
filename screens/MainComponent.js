@@ -250,7 +250,7 @@ const Main = () =>
                     connectionInfo.type
                 )
                  : ToastAndroid.show(
-                        'Initial Network Connectivity Type: ' +
+                        'Initial Network Connectivity Type: ',
                         connectionInfo.type,
                         ToastAndroid.LONG
                  );
